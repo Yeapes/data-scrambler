@@ -1,7 +1,21 @@
 <?php
- 
+ include_once "helpers.php";
+
+ $task = "encode";
+ if(isset($_GET['task']) && $_GET['task'] != ''){
+   $task = $_GET['task'];
+ }
  $key_data = "abcdefghijklmnopqrstuvwxyz1234567890";
 
+ if('key' == $task){
+  //Convert string to array
+   $key_original = str_split($key_data);
+   shuffle($key_original);
+    
+   //array to string 
+   $key_data = join('',$key_original);
+ }
+ 
 ?>
 
 <!doctype html>
@@ -32,12 +46,12 @@
                 Encode
                 </a>
 
-                <a href="/data_scrambler.php?task=encode" class="btn btn-primary btn-floating mx-1">
+                <a href="/data_scrambler.php?task=decode" class="btn btn-primary btn-floating mx-1">
                 Decode
                 </a>
  
 
-                <a href="/data_scrambler.php?task=encode" class="btn btn-primary btn-floating mx-1">
+                <a href="/data_scrambler.php?task=key" class="btn btn-primary btn-floating mx-1">
                 Generate Key
                 </a>
             </div>
@@ -45,7 +59,7 @@
                     <!-- Name input -->
                     <div class="form-outline mb-4">
                     <label class="form-label" for="form4Example1">key</label>
-                    <input type="text" id="form4Example1" class="form-control" /> 
+                    <input type="text" id="form4Example1" class="form-control" <?php getKey($key_data); ?>  /> 
                     </div> 
 
                     <!-- Message input -->

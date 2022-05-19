@@ -1,5 +1,8 @@
 <?php
 
+function getKey($key){
+    printf(" value = '%s' ",$key);
+}
 function scrambleData($Originaldata, $key){
     $originalKey = "abcdefghijklmnopqrstuvwxyz1234567890";
     $data = '';
