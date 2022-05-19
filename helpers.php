@@ -18,7 +18,7 @@ function scrambleData($Originaldata, $key){
             $data .= $currentChar;
         }
     }
-    return $data;
+    return 1;
 }
 
 
