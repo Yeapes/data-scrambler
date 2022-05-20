@@ -11,27 +11,27 @@ function scrambleData($Originaldata, $key){
     for($i = 0; $i < $length; $i++){
         $currentChar = $Originaldata[$i];
         $position = strpos($originalKey,$currentChar);
-         
-        
-
+          
         if($position !== false){
              $data .= $key[$position];   
         }else{
             $data .= $currentChar;
         }
     }
+     
     return $data;
 }
 
 
 function decodeData($Originaldata, $key){
+ 
     $originalKey = "abcdefghijklmnopqrstuvwxyz1234567890";
     $data = '';
     $length = strlen($Originaldata);
 
     for($i = 0; $i < $length; $i++){
         $currentChar = $Originaldata[$i];
-        $position = strpos($originalKey,$currentChar);
+        $position = strpos($key,$currentChar);
 
         if($position !== false){
              $data .= $originalKey[$position];   
@@ -39,5 +39,6 @@ function decodeData($Originaldata, $key){
             $data .= $currentChar;
         }
     }
+    // return 1;
     return $data;
 }

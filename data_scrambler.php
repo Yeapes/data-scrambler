@@ -33,7 +33,7 @@
       $scrambledData = decodeData($data,$key_data);
     }
  }
-
+echo $task;
  
 ?>
 
@@ -73,7 +73,7 @@
                 Generate Key
                 </a>
             </div>
-                <form method="POST" action="data_scrambler.php<?php if('decode'==$task){ echo "&task=decode"; } ?>">
+                <form method="POST" action="data_scrambler.php<?php if('decode'==$task){ echo "/?task=decode"; } ?>">
                     <!-- Name input -->
                     <div class="form-outline mb-4">
                     <label class="form-label" for="form4Example1">key</label>
