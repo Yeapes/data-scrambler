@@ -11,6 +11,8 @@ function scrambleData($Originaldata, $key){
     for($i = 0; $i < $length; $i++){
         $currentChar = $Originaldata[$i];
         $position = strpos($originalKey,$currentChar);
+         
+        
 
         if($position !== false){
              $data .= $key[$position];   
@@ -18,7 +20,7 @@ function scrambleData($Originaldata, $key){
             $data .= $currentChar;
         }
     }
-    return 1;
+    return $data;
 }
 
 
